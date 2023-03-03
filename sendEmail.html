@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;500;700&display=swap" rel="stylesheet">
+    <title>SEND EMAIL</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        :root{
+            --background-color-button:green;
+            --color-letter-button:white;
+            --color-text:rgb(153, 152, 152);
+            --font-family:'Quicksand', sans-serif;
+            --color-span:#ACD9B2;
+            --backgrpund-logo-message: #F7F7F7;
+        }
+        body{
+            margin: 0;
+            font-family: var(--font-family);
+            padding: 0;
+        }
+        .container{
+            height: 100vh;
+            width: 100%;
+            display: grid;
+            place-content: center;
+        }
+        .logo{
+            margin: 36px 0;
+            text-align: center;
+            display: block;
+        }
+        .logo__img{
+            width: 50%;
+        }
+        .description{
+            width: 300px;
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+        }
+        .description__title{
+            margin: 12px;
+        }
+        .description__text{
+            font-size: 1rem;
+            margin: 0;
+            color: var(--color-text);
+        }
+        .logo-message{
+            display: flex;
+            justify-content: center;
+        }
+        .logo-background{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 40px 0;
+            width: 140px;
+            height: 140px;
+            border-radius: 100px;
+            background-color: var(--backgrpund-logo-message);
+        }
+        .login__button{
+            margin: 4px 0;
+            text-align: center;
+            width: 100%;
+            padding: 24px 0;
+            border-radius: 10px;
+            border: none;
+            background-color: var(--background-color-button);
+            color: var(--color-letter-button);
+            font-family: var(--font-family);
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+        .login__button:hover{
+            opacity: 0.5;
+        }
+        .postdata{
+            margin: 8px 0;
+            font-size: 0.9rem;
+            display: flex;
+            justify-content: center;
+        }
+        a{
+            color: var(--color-span);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            margin: 0 4px;
+        }
+        @media screen and (min-width:500px) {
+            .logo{
+                display: none;
+            }
+            .login__button{
+                padding: 20px 0;
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <div class="container">
+            <div class="logo">
+                <img src="logos/logo_yard_sale.svg" alt="logo_yard_sale" class="logo__img">
+            </div>
+            <div class="description">
+                <h3 class="description__title">Email has been sent!</h3>
+                <p class="description__text">Please check your inbox for instructions on how to reset the password</p>
+            </div>
+            <div class="logo-message">
+                <div class="logo-background">
+                    <img src="icons/email.svg" alt="logo_message" class="logo-background__img">
+                </div>
+            </div>
+            <div class="login">
+                <button class="login__button">Login</button>
+            </div>
+            <div class="postdata">
+                <p class="postdata__text">Didn't receive the email?</p>
+                <a href="#">Resend</a>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

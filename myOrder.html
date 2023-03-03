@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;500;700&display=swap" rel="stylesheet">
+    <title>My order</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        :root{
+            --color-text:rgb(153, 152, 152);
+            --font-family:'Quicksand', sans-serif;
+            --color-list-option:black;
+            --color-list-signout:#ACD9B2;
+            --background-order-total:rgb(240, 240, 240);
+        }
+        body{
+            margin: 0;
+            font-family: var(--font-family);
+            padding: 0;
+            font-size: 62.5%;
+        }
+        .container{
+            width: 100%;
+            height: 100vh;
+            display: grid;
+            place-content: center;
+        }
+        .container-body{
+            width: 300px;
+            display: flex;
+            flex-direction: column;
+        }
+        .title{
+            margin: 16px 0;
+            display: none;
+        }
+        .title__text{
+            font-size: 1.1rem;
+        }
+        .order-total{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 8px 16px;
+            background-color: var(--background-order-total);
+            border-radius: 12px;
+        }
+        .order-text{
+            display: flex;
+            flex-direction: column;
+        }
+        .order-text__date,.order-total__price,.order-card__price{
+            font-weight: 700;
+            font-size: 1rem;
+        }
+        .order-text__article,.order-product__name{
+            color: var(--color-text);
+            margin: 4px 0;
+            font-size: 0.9rem;
+        }
+        .order-text__date{
+            margin: 0;
+        }
+        .order-list{
+            display: grid;
+            row-gap: 28px;
+            padding: 24px 0;
+        }
+        .order-card{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .order-product{
+            display: flex;
+            align-items: center;
+        }
+        .order-product__img{
+            width: 70px;
+            height: 70%;
+            border-radius: 12px;
+        }
+        .order-product__name{
+            padding: 0 16px;
+        }
+        @media (min-width:500px){
+            .title{
+                display: inline-block;
+            }
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <div class="container">
+            <div class="container-body">
+                <div class="title">
+                    <h2 class="title__text">My order</h2>
+                </div>
+                <div class="order-description">
+                    <div class="order-total">
+                        <div class="order-text">
+                            <p class="order-text__date">04.05.2021</p>
+                            <p class="order-text__article">6 articles</p>
+                        </div>
+                        <p class="order-total__price">$ 560.00</p>
+                    </div>
+                </div>
+                <div class="order-list">
+                    <div class="order-card">
+                        <div class="order-product">
+                            <img src="icons/card1.JPG" alt="Round-shelf" class="order-product__img">
+                            <p class="order-product__name">Round shelf</p>
+                        </div>
+                        <p class="order-card__price">$ 120.00</p>
+                    </div>
+                    <div class="order-card">
+                        <div class="order-product">
+                            <img src="icons/card1.JPG" alt="Round-shelf" class="order-product__img">
+                            <p class="order-product__name">Round shelf</p>
+                        </div>
+                        <p class="order-card__price">$ 120.00</p>
+                    </div>
+                    <div class="order-card">
+                        <div class="order-product">
+                            <img src="icons/card1.JPG" alt="Round-shelf" class="order-product__img">
+                            <p class="order-product__name">Round shelf</p>
+                        </div>
+                        <p class="order-card__price">$ 120.00</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

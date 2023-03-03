@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;500;700&display=swap" rel="stylesheet">
+    <title>Home</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        :root{
+            --background-color-button:green;
+            --color-letter-button:white;
+            --background-input:rgb(240, 240, 240);
+            --color-text:rgb(153, 152, 152);
+            --font-family:'Quicksand', sans-serif;
+            --color-link:#ACD9B2;
+            --background-color-secondary-button:white;
+            --color-prices:black;
+        }
+        body{
+            margin: 0;
+            font-family: var(--font-family);
+            padding: 0;
+        }
+        .container{
+            width: 100%;
+            display: grid;
+            place-content: center;
+        }
+        .container-body{
+            width: 300px;
+            padding: 60px 0;
+        }
+        .search{
+            position: relative;
+        }
+        .search__input{
+            width: 100%;
+            background-color: var(--background-input);
+            border: none;
+            padding: 12px 0 12px 32px;
+            border-radius: 10px;
+        }
+        .search__input::placeholder{
+            color: var(--color-text);
+        }
+        .search__icon{
+            position: absolute;
+            left: 8px;
+            width: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--color-text);
+        }
+        .menu{
+            width: 300px;
+            overflow: hidden;
+            display: flex;
+        }
+        .menu-list{
+            display: flex;
+            justify-content: center;
+            padding: 0;
+        }
+        .menu-list__item{
+            list-style: none;
+            padding: 8px 12px;
+            color: var(--color-text);
+            border-radius: 50px;
+        }
+        .menu-list__item:hover{
+            border: 1px solid var(--color-link);
+            color: var(--color-link);
+        }
+        .filter{
+            display: flex;
+            justify-content: center;
+        }
+        .filter__text{
+            font-weight: 700;
+        }
+        .filter-selection{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .filter-selection__text{
+            padding: 0 8px;
+            color: var(--color-text);
+        }
+        .filter-selection__icon{
+            transform: rotate(90deg);
+            position: relative;
+            top: 2px;
+            filter: invert(83%) sepia(1%) saturate(6605%) hue-rotate(75deg) brightness(116%) contrast(67%);
+        }
+        .section-products{
+            display: grid;
+            grid-template-columns: repeat(2,1fr);
+            column-gap: 20px;
+            row-gap: 28px;
+            overflow-y:scroll;
+        }
+        .card{
+            width: 100%;
+        }
+        .card__image{
+            width: 140px;
+            height: 140px;
+            border-radius: 20px;
+        }
+        .card-description{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .card-description__img{
+            width: 40px;
+            height: 40px;
+        }
+        .card-description__img--secondary{
+            box-shadow: 0 0 5px var(--color-text);
+            border-radius: 50px;
+        }
+        .card-text__price{
+            margin: 4px 0 0;
+            font-weight: 700;
+            font-size: 1rem;
+        }
+        .card-text__product{
+            margin: 0;
+            color: var(--color-text);
+            font-size: 0.8rem;
+        }
+        @media screen and (min-width:780px) {
+            .container-body,.menu{
+                width: 100%;
+            }
+            .options{
+                display: flex;
+                align-items: center;
+                margin-bottom: 20px;
+            }
+            .menu{
+                display: none;
+            }
+            .filter{
+                margin-left: 32px;
+            }
+            .section-products{
+                grid-template-columns: repeat(5,1fr);
+            }
+            .card__image{
+                width: 134px;
+                height: 134px;
+            }
+        }
+        @media screen and (min-width:900px) {
+            .card__image{
+                width: 164px;
+                height: 164px;
+            }
+        }
+        @media screen and (min-width:1100px) {
+            .card-text__price{
+                font-size: 1.5rem;
+            }
+            .card-text__product{
+                margin: 0;
+                color: var(--color-text);
+                font-size: 1.1rem;
+            }
+            .card__image{
+                width: 200px;
+                height: 200px;
+            }
+            .card-description__img{
+                width: 48px;
+                height: 48px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <div class="container">
+            <div class="container-body">
+                <div class="options">
+                    <div class="search">
+                        <input type="search" name="searchProduct" class="search__input" placeholder="Search product">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="search__icon" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd" />
+                        </svg>
+                    </div>
+                    <div class="menu">
+                        <ul class="menu-list">
+                            <li class="menu-list__item">All</li>
+                            <li class="menu-list__item">Clothes</li>
+                            <li class="menu-list__item">Electronics</li>
+                            <li class="menu-list__item">Furniture</li>
+                            <li class="menu-list__item">Toys</li>
+                            <li class="menu-list__item">Others</li>
+                        </ul>
+                    </div>
+                    <div class="filter">
+                        <p class="filter__text">Order:</p>
+                        <div class="filter-selection">
+                            <p class="filter-selection__text">Most recent</p>
+                            <img src="icons/flechita.svg" alt="flechita" class="filter-selection__icon">
+                        </div>
+                    </div>
+                </div>
+                <div class="section-products">
+                    <div class="card">
+                        <img src="icons/card1.JPG" alt="round shelf" class="card__image">
+                        <div class="card-description">
+                            <div class="card-text">
+                                <h3 class="card-text__price">$ 120,00</h3>
+                                <p class="card-text__product">Round shelf</p>
+                            </div>
+                            <img src="icons/bt_add_to_cart.svg" alt="Add_to_cart_img" class="card-description__img">
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="icons/card2.JPG" alt="round shelf" class="card__image">
+                        <div class="card-description">
+                            <div class="card-text">
+                                <h3 class="card-text__price">$ 120,00</h3>
+                                <p class="card-text__product">Round shelf</p>
+                            </div>
+                            <img src="icons/bt_added_to_cart.svg" alt="Added_to_cart_img" class="card-description__img card-description__img--secondary">
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="icons/card1.JPG" alt="round shelf" class="card__image">
+                        <div class="card-description">
+                            <div class="card-text">
+                                <h3 class="card-text__price">$ 120,00</h3>
+                                <p class="card-text__product">Round shelf</p>
+                            </div>
+                            <img src="icons/bt_add_to_cart.svg" alt="Add_to_cart_img" class="card-description__img">
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="icons/card2.JPG" alt="round shelf" class="card__image">
+                        <div class="card-description">
+                            <div class="card-text">
+                                <h3 class="card-text__price">$ 120,00</h3>
+                                <p class="card-text__product">Round shelf</p>
+                            </div>
+                            <img src="icons/bt_added_to_cart.svg" alt="Added_to_cart_img" class="card-description__img card-description__img--secondary">
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="icons/card1.JPG" alt="round shelf" class="card__image">
+                        <div class="card-description">
+                            <div class="card-text">
+                                <h3 class="card-text__price">$ 120,00</h3>
+                                <p class="card-text__product">Round shelf</p>
+                            </div>
+                            <img src="icons/bt_add_to_cart.svg" alt="Add_to_cart_img" class="card-description__img">
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="icons/card2.JPG" alt="round shelf" class="card__image">
+                        <div class="card-description">
+                            <div class="card-text">
+                                <h3 class="card-text__price">$ 120,00</h3>
+                                <p class="card-text__product">Round shelf</p>
+                            </div>
+                            <img src="icons/bt_added_to_cart.svg" alt="Added_to_cart_img" class="card-description__img card-description__img--secondary">
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="icons/card1.JPG" alt="round shelf" class="card__image">
+                        <div class="card-description">
+                            <div class="card-text">
+                                <h3 class="card-text__price">$ 120,00</h3>
+                                <p class="card-text__product">Round shelf</p>
+                            </div>
+                            <img src="icons/bt_add_to_cart.svg" alt="Add_to_cart_img" class="card-description__img">
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="icons/card2.JPG" alt="round shelf" class="card__image">
+                        <div class="card-description">
+                            <div class="card-text">
+                                <h3 class="card-text__price">$ 120,00</h3>
+                                <p class="card-text__product">Round shelf</p>
+                            </div>
+                            <img src="icons/bt_added_to_cart.svg" alt="Added_to_cart_img" class="card-description__img card-description__img--secondary">
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="icons/card1.JPG" alt="round shelf" class="card__image">
+                        <div class="card-description">
+                            <div class="card-text">
+                                <h3 class="card-text__price">$ 120,00</h3>
+                                <p class="card-text__product">Round shelf</p>
+                            </div>
+                            <img src="icons/bt_add_to_cart.svg" alt="Add_to_cart_img" class="card-description__img">
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="icons/card2.JPG" alt="round shelf" class="card__image">
+                        <div class="card-description">
+                            <div class="card-text">
+                                <h3 class="card-text__price">$ 120,00</h3>
+                                <p class="card-text__product">Round shelf</p>
+                            </div>
+                            <img src="icons/bt_added_to_cart.svg" alt="Added_to_cart_img" class="card-description__img card-description__img--secondary">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

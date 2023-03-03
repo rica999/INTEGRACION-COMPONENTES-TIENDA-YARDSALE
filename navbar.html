@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;500;700&display=swap" rel="stylesheet">
+    <title>NAVBAR</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        :root{
+            --font-family:'Quicksand', sans-serif;
+            --color-menu-hover:#ACD9B2;
+            --color-text:rgb(153, 152, 152);
+            --background-order-total:rgb(240, 240, 240);
+        }
+        body{
+            padding: 0;
+            margin: 0;
+            font-family: var(--font-family);
+            font-size: 62.5%;
+        }
+        .container-nav{
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px solid var(--background-order-total);
+        }
+        .container-primary,.container-secondary{
+            display: flex;
+        }
+        .container-primary{
+            padding: 0 0 0 40px;
+        }
+        .container-secondary{
+            margin-right: 40px;
+        }
+        .menu-icon{
+            display: none;
+        }
+        .yard-logo{
+            width: 120px;
+        }
+        .menu{
+            display: flex;
+            margin-left: 28px;
+        }
+        .menu-list{
+            display: flex;
+            justify-content: center;
+            padding: 0;
+        }
+        .menu-list__item{
+            list-style: none;
+            padding: 8px 12px;
+            color: var(--color-text);
+            border-radius: 50px;
+            font-size: 0.8rem;
+        }
+        .menu-list__item:hover{
+            border: 1px solid var(--color-menu-hover);
+            color: var(--color-menu-hover);
+        }
+        .account{
+            display: flex;
+            margin: 0 16px;
+            align-items: center;
+        }
+        .account__text{
+            font-size: 0.8rem;
+        }
+        .account__arrow{
+            position: relative;
+            top: 1px;
+            width: 5px;
+            transform: rotate(90deg);
+            margin-left: 8px;
+            filter: invert(83%) sepia(1%) saturate(6605%) hue-rotate(75deg) brightness(116%) contrast(67%);
+        }
+        .icon-shop{
+            width: 32px;
+        }
+        @media (max-width:820px){
+            .menu-icon{
+                display: inline-block;
+            }
+            .menu,.account{
+                display: none;
+            }
+            .container-nav{
+                padding: 10px 20px;
+            }
+            .container-primary,.container-secondary{
+                margin: 0;
+                padding: 0;
+            }
+        }
+        @media (max-width:890px){
+            .yard-logo{
+                width: 92px;
+            }
+            .icon-shop{
+                width: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="container-nav">
+                <img src="icons/icon_menu.svg" alt="menu-icon" class="menu-icon">
+                <div class="container-primary">
+                    <img src="logos/logo_yard_sale.svg" alt="yard_logo" class="yard-logo">
+                    <div class="menu">
+                        <ul class="menu-list">
+                            <li class="menu-list__item">All</li>
+                            <li class="menu-list__item">Clothes</li>
+                            <li class="menu-list__item">Electronics</li>
+                            <li class="menu-list__item">Furniture</li>
+                            <li class="menu-list__item">Toys</li>
+                            <li class="menu-list__item">Others</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="container-secondary">
+                    <div class="account">
+                        <p class="account__text">camilayokoo@gmail.com</p>
+                        <img src="icons/flechita.svg" alt="arrow" class="account__arrow">
+                    </div>
+                    <img src="icons/icon_shopping_cart_notification.svg" alt="icon-shop" class="icon-shop">
+                </div>
+            </div>
+        </nav>
+    </header>
+</body>
+</html>

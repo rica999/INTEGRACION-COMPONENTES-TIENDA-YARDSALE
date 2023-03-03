@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;500;700&display=swap" rel="stylesheet">
+    <title>LOGIN</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        :root{
+            --background-color-button:green;
+            --color-letter-button:white;
+            --background-input:rgb(240, 240, 240);
+            --color-text:rgb(153, 152, 152);
+            --font-family:'Quicksand', sans-serif;
+            --color-link:#ACD9B2;
+            --background-color-secondary-button:white;
+        }
+        body{
+            margin: 0;
+            font-family: var(--font-family);
+            padding: 0;
+        }
+        .container{
+            height: 100vh;
+            width: 100%;
+            display: grid;
+            place-content: center;
+        }
+        .form, .postdata{
+            width: 300px;
+        }
+        .logo{
+            width: 100%;
+            margin-bottom: 36px;
+            text-align: center;
+            display: block;
+        }
+        .logo__img{
+            width: 60%;
+        }
+        .form{
+            margin: 12px 0;
+        }
+        form{
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        .form__label{
+            margin: 8px 0;
+            font-weight: 700;
+        }
+        .form__input{
+            margin-bottom: 24px;
+            outline: none;
+            border: none;
+            background-color: var(--background-input);
+            border-radius: 10px;
+            width: 100%;
+            padding: 16px 8px;
+        }
+        .form__submit{
+            margin: 24px 0 0;
+            text-align: center;
+            width: 100%;
+            padding: 24px 0;
+            border-radius: 10px;
+            border: none;
+            background-color: var(--background-color-button);
+            color: var(--color-letter-button);
+            font-family: var(--font-family);
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+        .form__submit:hover{
+            opacity: 0.5;
+        }
+        .postdata{
+            text-align: center;
+        }
+        .postdata__link{
+            text-decoration: none;
+            color: var(--color-link);
+        }
+        .form__submit--secondary{
+            color: var(--color-link);
+            background-color: var(--background-color-secondary-button);
+            border: 1px solid var(--color-link);
+            margin: 0;
+            width: 300px;
+            position: absolute;
+            bottom: 24px;
+        }
+        @media screen and (min-width:500px) {
+            .logo{
+                display: none;
+            }
+            .form__submit{
+                padding: 20px 0;
+                font-size: 1rem;
+                margin-bottom: 4px;
+            }
+            .form__input{
+                padding: 12px 8px;
+            }
+            .sign-up{
+                display: flex;
+                align-items: center;
+            }
+            .form__submit--sign{
+                margin-top: 60px ;
+                position: relative;
+            }
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <div class="container">
+            <div class="logo">
+                <img src="logos/logo_yard_sale.svg" alt="logo_yard_sale" class="logo__img">
+            </div>
+            <div class="form">
+                <form action="submit" method="post">
+                    <label for="email" class="form__label">Email address</label>
+                    <input type="email" class="form__input" id="email" placeholder="camilayokoo@gmail.com">
+                    <label for="password" class="form__label">Password</label>
+                    <input type="password" class="form__input" id="password" placeholder="*********">
+                    <input type="submit" value="Log in" class="form__submit">
+                </form>
+            </div>
+            <div class="postdata">
+                <a href="#" class="postdata__link">Forgot my password</a>
+            </div>
+            <div class="sign-up">
+                <button class="form__submit form__submit--secondary">Sign up</button>
+            </div>
+        </div>
+    </main>
+</body>
+</body>
+</html>

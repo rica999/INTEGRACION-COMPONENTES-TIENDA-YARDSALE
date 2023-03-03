@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;500;700&display=swap" rel="stylesheet">
+    <title>VIEW PRODUCT</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        :root{
+            --font-family:'Quicksand', sans-serif;
+            --color-text:rgb(153, 152, 152);
+            --point-hover:rgb(153, 152, 152);
+            --point:rgb(240, 240, 240);
+            --background-order-total:rgb(240, 240, 240);
+            --background-color-button:green;
+            --color-letter-button:white;
+        }
+        body{
+            padding: 0;
+            margin: 0;
+            font-family: var(--font-family);
+            font-size: 62.5%;
+        }
+        .container{
+            width: 100%;
+            display: grid;
+            place-content: end;
+        }
+        .container-body{
+            width: 300px;
+        }
+        .close-img{
+            display: none;
+        }
+        .product-picture{
+            position: relative;
+        }
+        .product-img{
+            width: 100%;
+            display: block;
+        }
+        .points{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 12px 0px;
+        }
+        .points span{
+            background-color: var(--point);
+            margin: 0 4px;
+            border-radius: 100px;
+            padding: 3px 3px;
+        }
+        .points span:hover{
+            background-color: var(--point-hover);
+        }
+        p{
+            font-size: 0.8rem;
+            color: var(--color-text);
+        }
+        .product-description{
+            display: flex;
+            flex-direction: column;
+            padding: 12px 16px;
+        }
+        .product-description__price{
+            font-weight: 700;
+            margin: 0;
+            color: black;
+        }
+        .product-description__name{
+            margin: 4px 0;
+        }
+        .product-description__button{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 20px 0 0;
+            width: 100%;
+            padding: 8px 0;
+            border-radius: 10px;
+            border: none;
+            background-color: var(--background-color-button);
+            color: var(--color-letter-button);
+            font-family: var(--font-family);
+            font-weight: 700;
+            font-size: 0.8rem;
+        }
+        .product-description__button:hover{
+            opacity: 0.5;
+        }
+        .cart-img{
+            width: 32px;
+            padding: 0 8px;
+            color: white;
+            filter: invert(100%) sepia(0%) saturate(7500%) hue-rotate(72deg) brightness(107%) contrast(107%);
+        }
+        @media (min-width:700px){
+            .close-img{
+                display: inline-block;
+                position: absolute;
+                top: 12px;
+                left: 12px;
+                background-color: white;
+                border-radius: 100px;
+                padding: 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <div class="container">
+            <div class="container-body">
+                <div class="product-picture">
+                    <img src="icons/card2.JPG" alt="Retro-refrigerator" class="product-img">
+                    <img src="icons/icon_close.png" alt="close" class="close-img">
+                    <div class="points">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+                <div class="product-description">
+                    <p class="product-description__price">$ 120.00</p>
+                    <p class="product-description__name">Retro refrigerator</p>
+                    <p class="product-description__text">With its functional and practical interior, this refrigerator also fulfills a decorative function, adding personality and a retro-vintage aesthetic to your kitchen or workplace.</p>
+                    <button class="product-description__button"><img src="icons/icon_shopping_cart.svg" alt="add-cart" class="cart-img"> Add to cart</button>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

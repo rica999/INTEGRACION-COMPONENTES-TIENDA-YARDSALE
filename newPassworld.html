@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;500;700&display=swap" rel="stylesheet">
+    <title>NEW PASSWORD</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        :root{
+            --background-color-button:green;
+            --color-letter-button:white;
+            --background-input:rgb(240, 240, 240);
+            --color-text:rgb(153, 152, 152);
+            --font-family:'Quicksand', sans-serif;
+        }
+        body{
+            margin: 0;
+            font-family: var(--font-family);
+            padding: 0;
+        }
+        .container{
+            height: 100vh;
+            width: 100%;
+            display: grid;
+            place-content: center;
+        }
+        .logo{
+            margin: 36px 0;
+            text-align: center;
+            display: block;
+        }
+        .logo__img{
+            width: 50%;
+        }
+        .description, form{
+            display: flex;
+            flex-direction: column;
+            width: 300px;
+        }
+        .description{
+            align-items: center;
+        }
+        .description__title{
+            margin: 12px;
+        }
+        .description__text{
+            font-size: 0.9rem;
+            margin: 0;
+            color: var(--color-text);
+        }
+        .form{
+            width: 100%;
+            margin: 40px 0;
+        }
+        form{
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        .form__label{
+            margin: 8px 0;
+            font-weight: 700;
+        }
+        .form__input{
+            margin-bottom: 24px;
+            outline: none;
+            border: none;
+            background-color: var(--background-input);
+            border-radius: 10px;
+            width: 100%;
+            padding: 16px 8px;
+        }
+        .form__submit{
+            margin: 24px 0;
+            text-align: center;
+            width: 100%;
+            padding: 24px 0;
+            border-radius: 10px;
+            border: none;
+            background-color: var(--background-color-button);
+            color: var(--color-letter-button);
+            font-family: var(--font-family);
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+        .form__submit:hover{
+            opacity: 0.5;
+        }
+        @media screen and (min-width:500px) {
+            .logo{
+                display: none;
+            }
+            .description__text{
+                font-size: 1rem;
+            }
+            .form__submit{
+                padding: 20px 0;
+                font-size: 1rem;
+            }
+            .form__input{
+                padding: 12px 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <div class="container">
+            <div class="logo">
+                <img src="logos/logo_yard_sale.svg" alt="logo_yard_sale" class="logo__img">
+            </div>
+            <div class="description">
+                <h3 class="description__title">Create a new password</h3>
+                <p class="description__text">Enter a new password for your account</p>
+            </div>
+            <div class="form">
+                <form action="submit" method="post">
+                    <label for="password" class="form__label">Password</label>
+                    <input type="password" class="form__input" id="password" placeholder="******">
+                    <label for="re-password" class="form__label">Re-Password</label>
+                    <input type="password" class="form__input" id="re-password" placeholder="******">
+                    <input type="submit" value="Confirm" class="form__submit">
+                </form>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

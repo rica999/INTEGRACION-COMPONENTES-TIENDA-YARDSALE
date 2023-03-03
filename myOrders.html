@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;500;700&display=swap" rel="stylesheet">
+    <title>My order</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        :root{
+            --color-text:rgb(153, 152, 152);
+            --font-family:'Quicksand', sans-serif;
+            --color-list-option:black;
+            --color-list-signout:#ACD9B2;
+            --background-order-total:rgb(240, 240, 240);
+        }
+        body{
+            margin: 0;
+            font-family: var(--font-family);
+            padding: 0;
+            font-size: 62.5%;
+        }
+        .container{
+            width: 100%;
+            height: 100vh;
+            display: grid;
+            place-content: center;
+        }
+        .container-body{
+            width: 300px;
+            display: flex;
+            flex-direction: column;
+        }
+        .title{
+            margin: 16px 0;
+            display: none;
+        }
+        .title__text{
+            font-size: 1.1rem;
+        }
+        .orders-total{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 8px 0;
+            border-radius: 12px;
+        }
+        .orders-text{
+            display: flex;
+            flex-direction: column;
+        }
+        .orders-text__date,.orders-money__price{
+            font-weight: 700;
+            font-size: 1rem;
+        }
+        .orders-text__article{
+            color: var(--color-text);
+            margin: 4px 0;
+            font-size: 0.9rem;
+        }
+        .orders-text__date{
+            margin: 0;
+        }
+        .orders-money{
+            display: flex;
+        }
+        .orders-money__arrow{
+            padding: 0 12px;
+            position: relative;
+            top: 1px;
+        }
+        @media (min-width:500px){
+            .title{
+                display: inline-block;
+            }
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <div class="container">
+            <div class="container-body">
+                <div class="title">
+                    <h2 class="title__text">My orders</h2>
+                </div>
+                <div class="orders-description">
+                    <div class="orders-total">
+                        <div class="orders-text">
+                            <p class="orders-text__date">04.05.2021</p>
+                            <p class="orders-text__article">6 articles</p>
+                        </div>
+                        <div class="orders-money">
+                            <p class="orders-money__price">$ 560.00</p>
+                            <img src="icons/flechita.svg" alt="arrow" class="orders-money__arrow">
+                        </div>
+                    </div>
+                    <div class="orders-total">
+                        <div class="orders-text">
+                            <p class="orders-text__date">04.05.2021</p>
+                            <p class="orders-text__article">6 articles</p>
+                        </div>
+                        <div class="orders-money">
+                            <p class="orders-money__price">$ 560.00</p>
+                            <img src="icons/flechita.svg" alt="arrow" class="orders-money__arrow">
+                        </div>
+                    </div>
+                    <div class="orders-total">
+                        <div class="orders-text">
+                            <p class="orders-text__date">04.05.2021</p>
+                            <p class="orders-text__article">6 articles</p>
+                        </div>
+                        <div class="orders-money">
+                            <p class="orders-money__price">$ 560.00</p>
+                            <img src="icons/flechita.svg" alt="arrow" class="orders-money__arrow">
+                        </div>
+                    </div>
+                    <div class="orders-total">
+                        <div class="orders-text">
+                            <p class="orders-text__date">04.05.2021</p>
+                            <p class="orders-text__article">6 articles</p>
+                        </div>
+                        <div class="orders-money">
+                            <p class="orders-money__price">$ 560.00</p>
+                            <img src="icons/flechita.svg" alt="arrow" class="orders-money__arrow">
+                        </div>
+                    </div>
+                    <div class="orders-total">
+                        <div class="orders-text">
+                            <p class="orders-text__date">04.05.2021</p>
+                            <p class="orders-text__article">6 articles</p>
+                        </div>
+                        <div class="orders-money">
+                            <p class="orders-money__price">$ 560.00</p>
+                            <img src="icons/flechita.svg" alt="arrow" class="orders-money__arrow">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

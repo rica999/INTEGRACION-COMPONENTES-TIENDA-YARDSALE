@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;500;700&display=swap" rel="stylesheet">
+    <title>SHOPPING CART</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        :root{
+            --font-family:'Quicksand', sans-serif;
+            --color-text:rgb(153, 152, 152);
+            --point-hover:rgb(153, 152, 152);
+            --point:rgb(240, 240, 240);
+            --background-order-total:rgb(240, 240, 240);
+            --background-color-button:green;
+            --color-letter-button:white;
+        }
+        body{
+            padding: 0;
+            margin: 0;
+            font-family: var(--font-family);
+            font-size: 62.5%;
+        }
+        .container{
+            width: 100%;
+            display: grid;
+            place-content: end;
+        }
+        .container-body{
+            width: 300px;
+        }
+        .shopping-header{
+            display: flex;
+            border-bottom: 1px solid rgb(240, 240, 240);
+            padding: 0 12px;
+            align-items: center;
+        }
+        .shopping-header__title{
+            width: 100%;
+            text-align: center;
+        }
+        .shopping-header__arrow{
+            width: 10px;
+            display: none;
+        }
+        .shopping-content{
+            display: grid;
+            row-gap: 20px;
+            padding: 24px 12px;
+        }
+        .shopping-card{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .order-product{
+            display: flex;
+            align-items: center;
+        }
+        .order-product__img{
+            width: 70px;
+            height: 70%;
+            border-radius: 12px;
+        }
+        .order-product__name{
+            padding: 0 16px;
+            color: var(--color-text);
+            margin: 4px 0;
+            font-size: 0.8rem;
+        }
+        .shopping-header__title,.order-card__price,.shopping-total__price,.shopping-total__text{
+            font-weight: 700;
+            font-size: 0.9rem;
+        }
+        .shopping-total{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 0 12px;
+            padding: 4px 16px;
+            background-color: var(--background-order-total);
+            border-radius: 12px;
+        }
+        .checkout{
+            margin: 0 12px;
+        }
+        .checkout__button{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 12px 0 0;
+            width: 100%;
+            padding: 16px 0;
+            border-radius: 10px;
+            border: none;
+            background-color: var(--background-color-button);
+            color: var(--color-letter-button);
+            font-family: var(--font-family);
+            font-weight: 700;
+            font-size: 0.8rem;
+        }
+        .checkout__button:hover{
+            opacity: 0.5;
+        }
+        @media (min-width:500px){
+            .shopping-header__menu{
+                display: none;
+            }
+            .shopping-header__arrow{
+                display: inline-block;
+                width: 20px;
+                height: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <div class="container">
+            <div class="container-body">
+                <div class="shopping-header">
+                    <img src="icons/icon_menu.svg" alt="shopping-header__menu" class="shopping-header__menu">
+                    <img src="icons/arrow-left.png" alt="arrow-left" class="shopping-header__arrow">
+                    <p class="shopping-header__title">Shopping cart</p>
+                </div>
+                <div class="shopping-content">
+                    <div class="shopping-card">
+                        <div class="order-product">
+                            <img src="icons/card1.JPG" alt="Round-shelf" class="order-product__img">
+                            <p class="order-product__name">Round shelf</p>
+                        </div>
+                        <p class="order-card__price">$ 120.00</p>
+                        <img src="icons/icon_close.png" alt="close" class="close-img">
+                    </div>
+                    <div class="shopping-card">
+                        <div class="order-product">
+                            <img src="icons/card1.JPG" alt="Round-shelf" class="order-product__img">
+                            <p class="order-product__name">Round shelf</p>
+                        </div>
+                        <p class="order-card__price">$ 120.00</p>
+                        <img src="icons/icon_close.png" alt="close" class="close-img">
+                    </div>
+                    <div class="shopping-card">
+                        <div class="order-product">
+                            <img src="icons/card1.JPG" alt="Round-shelf" class="order-product__img">
+                            <p class="order-product__name">Round shelf</p>
+                        </div>
+                        <p class="order-card__price">$ 120.00</p>
+                        <img src="icons/icon_close.png" alt="close" class="close-img">
+                    </div>
+                    <div class="shopping-card">
+                        <div class="order-product">
+                            <img src="icons/card1.JPG" alt="Round-shelf" class="order-product__img">
+                            <p class="order-product__name">Round shelf</p>
+                        </div>
+                        <p class="order-card__price">$ 120.00</p>
+                        <img src="icons/icon_close.png" alt="close" class="close-img">
+                    </div>
+                </div>
+                <div class="shopping-total">
+                    <p class="shopping-total__text">Total</p>
+                    <p class="shopping-total__price">$ 560.00</p>
+                </div>
+                <div class="checkout">
+                    <button class="checkout__button">Checkout</button>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
