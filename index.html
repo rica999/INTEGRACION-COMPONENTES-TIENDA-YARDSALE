@@ -7,24 +7,52 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;500;700&display=swap" rel="stylesheet">
-    <title>TIENDA</title>
-    <style>
-        :root{
-            --white: #FFFFFF;
-            --black: #000000;
-            --dark: #232830;
-            --very-light-pink: #C7C7C7;
-            --text-input-field: #F7F7F7;
-            --hospital-green: #ACD9B2;
-        }
-
-        body{
-            font-family: 'Quicksand', sans-serif;
-            font-size: 62.5%;
-        }
-    </style>
+    <link rel="stylesheet" href="estilos.css">
+    <title>TIENDA YARDSALE</title>
 </head>
 <body>
-
+    <header>
+        <nav>
+            <div class="container-nav">
+                <img src="icons/icon_menu.svg" alt="menu-icon" class="menu-icon">
+                <div class="container-primary">
+                    <img src="logos/logo_yard_sale.svg" alt="yard_logo" class="yard-logo">
+                    <div class="menu">
+                        <ul class="menu-list">
+                            <li class="menu-list__item">All</li>
+                            <li class="menu-list__item">Clothes</li>
+                            <li class="menu-list__item">Electronics</li>
+                            <li class="menu-list__item">Furniture</li>
+                            <li class="menu-list__item">Toys</li>
+                            <li class="menu-list__item">Others</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="container-secondary">
+                    <div class="account">
+                        <p class="account__text">camilayokoo@gmail.com</p>
+                        <img src="icons/flechita.svg" alt="arrow" class="account__arrow" id="icon-arrow">
+                    </div>
+                    <img src="icons/icon_shopping_cart_notification.svg" alt="icon-shop" class="icon-shop">
+                </div>
+            </div>
+        </nav>
+        <div class="menu-nav-container hidden" id="menuNav">
+            <div class="menu-nav-body">
+                <ul class="menu-nav-list">
+                    <li class="menu-nav-list__item">
+                        <a href="#">My orders</a>
+                    </li>
+                    <li class="menu-nav-list__item">
+                        <a href="#">My account</a>
+                    </li>
+                    <li class="menu-nav-list__item">
+                        <a href="#">Sign out</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <script src="./main.js"></script>
 </body>
 </html>
