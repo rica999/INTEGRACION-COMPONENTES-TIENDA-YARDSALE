@@ -10,6 +10,8 @@ const orderProducts = document.querySelector("#orderProducts");
 const iconMenuShopCar = document.querySelector("#iconMenuShopCar");
 const iconArrowShopCar = document.querySelector("#iconArrowShopCar");
 
+const sectionProducts = document.querySelector("#sectionProducts");
+
 iconArrow.addEventListener("click",toggleMenuNav);
 
 function toggleMenuNav(){
@@ -45,3 +47,100 @@ iconArrowShopCar.addEventListener("click",closeShopCar);
 function closeShopCar(){
     orderProducts.classList.toggle("hidden");
 }
+
+/*CREAR PRODUCTOS CON JS*/
+let listProducts = [];
+
+listProducts.push({
+    name:"Bike",
+    price:"$"+860.00,
+    image:"icons/card1.JPG",
+    descripcion:"Round Self",
+    btnShop: "icons/bt_added_to_cart.svg"
+});
+listProducts.push({
+    name:"PS5",
+    price:"$"+460.00,
+    image:"icons/card1.JPG",
+    descripcion:"Round Self",
+    btnShop: "icons/bt_added_to_cart.svg"
+});
+listProducts.push({
+    name:"PLATZI",
+    price:"$"+1000.00,
+    image:"icons/card1.JPG",
+    descripcion:"Round Self",
+    btnShop: "icons/bt_added_to_cart.svg"
+});
+listProducts.push({
+    name:"PS5",
+    price:"$"+460.00,
+    image:"icons/card1.JPG",
+    descripcion:"Round Self",
+    btnShop: "icons/bt_added_to_cart.svg"
+});
+listProducts.push({
+    name:"PLATZI",
+    price:"$"+1000.00,
+    image:"icons/card1.JPG",
+    descripcion:"Round Self",
+    btnShop: "icons/bt_added_to_cart.svg"
+});
+
+function insertProducts(array){
+    for(products of array){
+
+        const divCard = document.createElement("div");
+        divCard.classList.add("card");
+
+        const divImgCard = document.createElement("div");
+        divImgCard.classList.add("card-image");
+
+        const imgCard = document.createElement("img");
+        imgCard.setAttribute("src",products.image);
+        imgCard.classList.add("card-image__img");
+
+        const divDescriptionCard = document.createElement("div");
+        divDescriptionCard.classList.add("card-description");
+
+        const divCardText = document.createElement("div");
+        divCardText.classList.add("card-text");
+
+        const priceProduct = document.createElement("h3");
+        priceProduct.classList.add("card-text__price");
+        priceProduct.textContent=products.price;
+        const textProduct = document.createElement("h3");
+        textProduct.classList.add("card-text__product");
+        textProduct.textContent=products.descripcion;
+
+        imgAddShopCar = document.createElement("img");
+        imgAddShopCar.setAttribute("src",products.btnShop);
+
+        sectionProducts.append(divCard);
+        divCard.append(divImgCard,divDescriptionCard);
+        divImgCard.append(imgCard);
+        divDescriptionCard.append(divCardText,imgAddShopCar);
+        divCardText.append(priceProduct,textProduct);
+
+        //otra forma
+
+        const contentListProducts = `
+        <div class="card">
+            <div class="card-image">
+                <img src=${products.image} alt="round shelf" class="card-image__img">
+            </div>
+            <div class="card-description">
+                <div class="card-text">
+                    <h3 class="card-text__price">$${products.price}</h3>
+                    <p class="card-text__product">${products.descripcion}</p>
+                </div>
+                <img src=${products.btnShop} alt="Add_to_cart_img" class="card-description__img">
+            </div>
+        </div>
+        `
+
+        sectionProducts.innerHTML += contentListProducts;
+    }
+}
+
+insertProducts(listProducts);
