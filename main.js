@@ -12,6 +12,10 @@ const iconArrowShopCar = document.querySelector("#iconArrowShopCar");
 
 const sectionProducts = document.querySelector("#sectionProducts");
 
+const iconCloseDetailProduct = document.querySelector("#iconCloseDetailProduct");
+const detailProduct = document.querySelector("#detailProduct");
+
+/*ABRIR Y CERRAR VISTA DE MENU NAVBAR*/
 iconArrow.addEventListener("click",toggleMenuNav);
 
 function toggleMenuNav(){
@@ -19,8 +23,12 @@ function toggleMenuNav(){
     if(!orderProducts.classList.contains("hidden")){
         orderProducts.classList.add("hidden");
     };
+    if(!detailProduct.classList.contains("hidden")){
+        detailProduct.classList.add("hidden");
+    };
 }
 
+/*ABRIR Y CERRAR VISTA DE MENU NAVBAR MOBILE*/
 iconMenu.addEventListener("click",openMenuMobile);
 iconClose.addEventListener("click",closeMenuMobile);
 
@@ -32,12 +40,16 @@ function closeMenuMobile(){
     menuMobile.classList.add("hidden");
 }
 
+/*ABRIR Y CERRAR VISTA DE SHOOPING CAR*/
 iconShop.addEventListener("click",openOrderProducts);
 
 function openOrderProducts(){
     orderProducts.classList.toggle("hidden");
     if(menuNav.classList.contains("hidden")){
         menuNav.classList.add("hidden");
+    };
+    if(!detailProduct.classList.contains("hidden")){
+        detailProduct.classList.add("hidden");
     };
 }
 
@@ -56,35 +68,42 @@ listProducts.push({
     price:"$"+860.00,
     image:"icons/card1.JPG",
     descripcion:"Round Self",
-    btnShop: "icons/bt_added_to_cart.svg"
+    btnShop: "icons/bt_added_to_cart.svg",
 });
 listProducts.push({
     name:"PS5",
     price:"$"+460.00,
     image:"icons/card1.JPG",
     descripcion:"Round Self",
-    btnShop: "icons/bt_added_to_cart.svg"
+    btnShop: "icons/bt_added_to_cart.svg",
 });
 listProducts.push({
     name:"PLATZI",
     price:"$"+1000.00,
     image:"icons/card1.JPG",
     descripcion:"Round Self",
-    btnShop: "icons/bt_added_to_cart.svg"
+    btnShop: "icons/bt_added_to_cart.svg",
 });
 listProducts.push({
     name:"PS5",
     price:"$"+460.00,
     image:"icons/card1.JPG",
     descripcion:"Round Self",
-    btnShop: "icons/bt_added_to_cart.svg"
+    btnShop: "icons/bt_added_to_cart.svg",
 });
 listProducts.push({
     name:"PLATZI",
     price:"$"+1000.00,
     image:"icons/card1.JPG",
     descripcion:"Round Self",
-    btnShop: "icons/bt_added_to_cart.svg"
+    btnShop: "icons/bt_added_to_cart.svg",
+});
+listProducts.push({
+    name:"PLATZI",
+    price:"$"+1000.00,
+    image:"icons/card1.JPG",
+    descripcion:"Round Self",
+    btnShop: "icons/bt_added_to_cart.svg",
 });
 
 function insertProducts(array){
@@ -99,6 +118,8 @@ function insertProducts(array){
         const imgCard = document.createElement("img");
         imgCard.setAttribute("src",products.image);
         imgCard.classList.add("card-image__img");
+        imgCard.setAttribute("onclick","openDetailProduct()"); //funciona
+        /* imgCard.addEventListener("click",openDetailProduct); */ //no funciona
 
         const divDescriptionCard = document.createElement("div");
         divDescriptionCard.classList.add("card-description");
@@ -113,7 +134,7 @@ function insertProducts(array){
         textProduct.classList.add("card-text__product");
         textProduct.textContent=products.descripcion;
 
-        imgAddShopCar = document.createElement("img");
+        const imgAddShopCar = document.createElement("img");
         imgAddShopCar.setAttribute("src",products.btnShop);
 
         sectionProducts.append(divCard);
@@ -124,14 +145,14 @@ function insertProducts(array){
 
         //otra forma
 
-        const contentListProducts = `
+        /* const contentListProducts = `
         <div class="card">
             <div class="card-image">
                 <img src=${products.image} alt="round shelf" class="card-image__img">
             </div>
             <div class="card-description">
                 <div class="card-text">
-                    <h3 class="card-text__price">$${products.price}</h3>
+                    <h3 class="card-text__price">${products.price}</h3>
                     <p class="card-text__product">${products.descripcion}</p>
                 </div>
                 <img src=${products.btnShop} alt="Add_to_cart_img" class="card-description__img">
@@ -139,8 +160,25 @@ function insertProducts(array){
         </div>
         `
 
-        sectionProducts.innerHTML += contentListProducts;
+        sectionProducts.innerHTML += contentListProducts; */
     }
 }
 
 insertProducts(listProducts);
+
+/*ABRIR Y CERRAR VISTA DE DETALLE DE PRODUCTO*/
+iconCloseDetailProduct.addEventListener("click",closeDetailProduct);
+
+function closeDetailProduct(){
+    detailProduct.classList.add("hidden");
+}
+
+function openDetailProduct(){
+    detailProduct.classList.remove("hidden");
+    if(!orderProducts.classList.contains("hidden")){
+        orderProducts.classList.add("hidden");
+    };
+    if(!menuNav.classList.contains("hidden")){
+        menuNav.classList.add("hidden");
+    };
+}
